@@ -18,6 +18,8 @@ import WhatsAppPage from "./pages/WhatsAppPage";
 import BackRedirectPage from "./pages/backredirect/BackNumber";
 import BackResultsPage from "./pages/backredirect/BackResultados";
 import BackVSLPage from "./pages/backredirect/BackVsl";
+import ReportPage2 from "./components/ReportPageEsposa";
+import AnalysisPage from "./pages/AnalysisPage";
 
 // /* fluxo sem foto */
 // import VerificacaoNoImg from "./pages/noimg/Verificacao";
@@ -55,11 +57,11 @@ export default function App() {
 
       {/* fluxo sem foto */}
       <Route path="/no-img/verificacao" element={<VerificacaoNoImg />} />
-      <Route path="/no-img/esposa" element={<EsposaNoImg />} />
+      <Route path="/no-img/esposa" element={<ReportPage2 />} />
       <Route path="/no-img/marido" element={<ReportPage />} />
 
       {/* <Route path="/no-img/marido" element={<MaridoNoImg />} /> */}
-      {/* <Route path="/no-img/vsl" element={<VSLNoImg />} /> */}
+      <Route path="/no-img/vsl" element={<AnalysisPage />} />
       {/* <Route path="/no-img/whats-web" element={<WhatsWebNoImg />} /> */}
 
       {/* backredirect */}
