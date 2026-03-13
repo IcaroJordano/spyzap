@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ContactInfoPanel from "./ContactInfoPanel";
 import CallDetailsPanel from "./CallDetailsPanel";
 
 export default function ChatArea() {

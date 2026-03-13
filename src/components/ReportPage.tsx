@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ConversationCard from "../components/ConversationCard";
 import ChatPopup from "../components/ChatPopup";
 import WhatsToast from "./WhatsToast";
 import ConversationCard2 from "./ConversationCard2";
