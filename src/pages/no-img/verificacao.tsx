@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 export default function Verificacao(): React.ReactElement {
   const [selected, setSelected] = useState<string | null>(null);
-  const [showContinue, setShowContinue] = useState(false);
 
   const currentDate = new Date().toLocaleDateString("pt-BR", {
     weekday: "long",
@@ -13,7 +12,6 @@ export default function Verificacao(): React.ReactElement {
 
   function selectOption(option: string) {
     setSelected(option);
-    setShowContinue(true);
   }
 
   function continuar() {
@@ -31,7 +29,6 @@ export default function Verificacao(): React.ReactElement {
     if (saved) {
       setTimeout(() => {
         setSelected(saved);
-        setShowContinue(true);
       }, 800);
     }
 

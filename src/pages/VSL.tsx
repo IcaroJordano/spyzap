@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header2";
-import ProgressScanner from "../components/ProgressScanner";
 import ResultCards from "../components/ResultCards";
 import TrackerCard from "../components/TrackerCard";
 import VSLPlayer from "../components/VSLPlayer";

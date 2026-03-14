@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ChatPopup from "../components/ChatPopup";
 import WhatsToast from "./WhatsToast";
 
@@ -10,7 +10,6 @@ interface Conversation {
 
 export default function ReportPage2() {
   const [popup, setPopup] = useState<string | null>(null);
-  const [date, setDate] = useState("");
 
   const conversations: Conversation[] = [
     {
@@ -37,36 +36,6 @@ export default function ReportPage2() {
     ["Escondido", 6],
     ["Não conta", 5],
   ];
-
-  useEffect(() => {
-    const days = [
-      "Domingo",
-      "Segunda-Feira",
-      "Terça-Feira",
-      "Quarta-Feira",
-      "Quinta-Feira",
-      "Sexta-Feira",
-      "Sábado",
-    ];
-    const months = [
-      "Janeiro",
-      "Fevereiro",
-      "Março",
-      "Abril",
-      "Maio",
-      "Junho",
-      "Julho",
-      "Agosto",
-      "Setembro",
-      "Outubro",
-      "Novembro",
-      "Dezembro",
-    ];
-    const now = new Date();
-    setDate(
-      `${days[now.getDay()]}, ${now.getDate()} de ${months[now.getMonth()]} de ${now.getFullYear()}`,
-    );
-  }, []);
 
   // Função que redireciona para a VSL
   const goToVSL = () => {

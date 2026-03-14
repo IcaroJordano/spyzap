@@ -6,38 +6,10 @@ import ConversationCard2 from "./ConversationCard2";
 export default function ReportPage2() {
   const [popup, setPopup] = useState<string | null>(null);
   const [ddd, setDDD] = useState("48");
-  const [date, setDate] = useState("");
 
   useEffect(() => {
     const savedDDD = localStorage.getItem("ddd") || "48";
     setDDD(savedDDD);
-
-    const days = [
-      "Domingo",
-      "Segunda-Feira",
-      "Terça-Feira",
-      "Quarta-Feira",
-      "Quinta-Feira",
-      "Sexta-Feira",
-      "Sábado",
-    ];
-    const months = [
-      "Janeiro",
-      "Fevereiro",
-      "Março",
-      "Abril",
-      "Maio",
-      "Junho",
-      "Julho",
-      "Agosto",
-      "Setembro",
-      "Outubro",
-      "Novembro",
-      "Dezembro",
-    ];
-    const now = new Date();
-    const formatted = `${days[now.getDay()]}, ${now.getDate()} de ${months[now.getMonth()]} de ${now.getFullYear()}`;
-    setDate(formatted);
   }, []);
 
   // função que redireciona para VSL

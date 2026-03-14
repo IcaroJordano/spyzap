@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function VersaoWhite() {
   return (
     <div className="text-slate-900 min-h-screen pb-40 bg-[#f1f5f9] overflow-x-hidden relative">

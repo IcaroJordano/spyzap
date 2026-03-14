@@ -43,6 +43,8 @@ export default function AnalysisPage() {
     return () => clearInterval(timer);
   }, []);
 
+  const ProgressBar2Any = ProgressBar2 as any;
+
   return (
     <div className="min-h-screen min-h-screen bg-[url('https://detetiveonlinebr.com/spyzp/assets/imgs/bg.webp')] bg-cover bg-black text-white flex flex-col items-center ">
       {/* Header */}
@@ -69,10 +71,8 @@ export default function AnalysisPage() {
       </div> */}
       <VSLPlayer />
 
-      {/* Progress */}
-
       <div className="mt-6 w-full max-w-xl">
-        <ProgressBar2 progress={progress} />
+        <ProgressBar2Any progress={progress} />
       </div>
 
       {/* Cards */}
