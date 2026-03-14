@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
+import ChatPopup from "../components/ChatPopup";
 import WhatsToast from "./WhatsToast";
-import ChatPopup from "./ChatPopup";
-// import ChatPopup from "../../../components/ChatPopup";
-// import WhatsToast from "../../../components/WhatsToast";
-// import ConversationCard2 from "../../../components/ConversationCard2";
+import ConversationCard2 from "./ConversationCard2";
 
 export default function ReportPage2() {
   const [popup, setPopup] = useState<string | null>(null);
-  const [ddd, setDDD] = useState("34");
+  const [ddd, setDDD] = useState("48");
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    const savedDDD = localStorage.getItem("ddd") || "34";
+    const savedDDD = localStorage.getItem("ddd") || "48";
     setDDD(savedDDD);
 
     const days = [
@@ -23,7 +21,6 @@ export default function ReportPage2() {
       "Sexta-Feira",
       "Sábado",
     ];
-
     const months = [
       "Janeiro",
       "Fevereiro",
@@ -38,105 +35,67 @@ export default function ReportPage2() {
       "Novembro",
       "Dezembro",
     ];
-
     const now = new Date();
-
     const formatted = `${days[now.getDay()]}, ${now.getDate()} de ${months[now.getMonth()]} de ${now.getFullYear()}`;
-
     setDate(formatted);
   }, []);
 
+  // função que redireciona para VSL
+  // função que redireciona para VSL
+  const goToVSL = () => {
+    window.location.href = "no-img/vsl"; // <-- alterado aqui
+  };
+
   return (
-    <div className="bg-gray-100 min-h-screen font-[Poppins] bg-[url('https://detetiveonlinebr.com/spyzp/no-img/assets/img/bg.webp')]">
+    <div className="bg-[#0f172a] min-h-screen font-sans text-white">
       {/* HEADER */}
-
-      <header className="text-center py-8 bg-green-500 text-white shadow">
+      <header className="text-center py-8 bg-gradient-to-r from-green-600 to-green-400 shadow-lg">
         <h1 className="text-2xl font-bold">Relatório de Acesso ao WhatsApp</h1>
-
-        <p className="mt-2">
+        <p className="mt-2 text-sm">
           Confira abaixo os principais dados recuperados da análise do número
           informado.
         </p>
       </header>
 
       <main className="max-w-lg mx-auto p-4 space-y-6">
-        {/* CONVERSAS */}
-
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-lg font-bold mb-3">Análise de Conversas</h2>
-
-          <p className="text-sm text-gray-600 mb-4">
-            <b>148 conversas suspeitas</b> foram encontradas durante a análise.
-            O sistema conseguiu recuperar mensagens apagadas e algumas foram
-            classificadas como críticas com base no conteúdo.
-          </p>
-
-          <p className="text-sm mb-4">
-            Toque em uma conversa abaixo para visualizar os detalhes.
-          </p>
-
-          <div className="space-y-3">
-            <div
-              onClick={() => setPopup("1")}
-              className="p-3 rounded-lg border cursor-pointer hover:bg-gray-100"
-            >
-              <p className="font-bold">+55 34 9XXXX-8392</p>
-              <p className="text-sm text-red-500">
-                Mensagem apagada recuperada
-              </p>
-              <p className="text-xs text-gray-500">Ontem</p>
-            </div>
-
-            <div
-              onClick={() => setPopup("2")}
-              className="p-3 rounded-lg border cursor-pointer hover:bg-gray-100"
-            >
-              <p className="font-bold">+55 34 9XXXX-7381</p>
-              <p className="text-sm text-red-500">Áudio suspeito detectado</p>
-              <p className="text-xs text-gray-500">3 dias</p>
-            </div>
-
-            <div
-              onClick={() => setPopup("3")}
-              className="p-3 rounded-lg border cursor-pointer hover:bg-gray-100"
-            >
-              <p className="font-bold">+55 34 9XXXX-0032</p>
-              <p className="text-sm text-red-500">
-                Fotos suspeitas encontradas
-              </p>
-              <p className="text-xs text-gray-500">1 semana</p>
-            </div>
-          </div>
-
-          <p className="text-xs text-center mt-4 text-gray-500">
-            <b>Conversas apagadas</b> foram marcadas como <b>Suspeitas</b>.
-          </p>
-        </div>
+        {/* Conversas */}
+        <section className="glass-panel rounded-3xl p-6 bg-white/10 backdrop-blur-md">
+          <ConversationCard2 {...({ ddd, openPopup: setPopup } as any)} />
+        </section>
 
         {/* FOTOS */}
-
-        <div className="bg-white p-6 rounded-xl shadow text-center">
-          <p className="text-lg">
-            <b>58</b> fotos apagadas.
+        <div className="glass-panel rounded-3xl p-6 bg-white/10 backdrop-blur-md text-center">
+          <p className="text-lg font-semibold mb-2">
+            <b>58</b> fotos apagadas
           </p>
-
           <img
-            src="https://detetiveonlinebr.com/spyzp/no-img/assets/img/mulher-fotos.jpeg"
-            className="rounded-lg mt-4"
+            src="https://detetiveonlinebr.com/spyzp/no-img/assets/img/homem-fotos.jpeg"
+            className="rounded-lg mx-auto"
           />
         </div>
 
-        {/* ÁUDIOS */}
-
-        <div className="bg-white p-6 rounded-xl shadow text-center">
-          <p className="text-lg">
+        {/* AUDIOS */}
+        <div className="glass-panel rounded-3xl p-6 bg-white/10 backdrop-blur-md text-center">
+          <p className="text-lg font-semibold">
             <b>4 áudios</b> comprometedores encontrados...
           </p>
         </div>
 
-        {/* PALAVRAS SUSPEITAS */}
+        {/* CTA */}
+        <button
+          onClick={goToVSL}
+          className="block w-full text-center bg-green-500 hover:bg-green-600 rounded-xl shadow-lg py-3 font-bold transition"
+        >
+          <span className="block font-extrabold text-sm">
+            FINALIZE SEU CADASTRO
+          </span>
+          <span className="block text-xs opacity-90">
+            E TENHA ACESSO TOTAL AO WHATSAPP
+          </span>
+        </button>
 
-        <div className="bg-white p-6 rounded-xl shadow">
+        {/* MENSAGENS E PALAVRAS-CHAVE */}
+        <div className="glass-panel rounded-3xl p-6 bg-white/10 backdrop-blur-md">
           <p>
             O sistema escaneou <b className="text-red-500">4.327 mensagens</b> e
             identificou várias palavras-chave que podem indicar comportamento
@@ -145,7 +104,7 @@ export default function ReportPage2() {
 
           <div className="mt-4 space-y-2">
             {[
-              ["Gostoso", 13],
+              ["Gostosa", 13],
               ["Amor", 9],
               ["Segredo", 8],
               ["Escondido", 6],
@@ -153,7 +112,7 @@ export default function ReportPage2() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex justify-between bg-gray-100 p-2 rounded"
+                className="flex justify-between bg-white/20 p-2 rounded"
               >
                 <span>"{item[0]}"</span>
                 <span className="font-bold">{item[1]}</span>
@@ -161,52 +120,39 @@ export default function ReportPage2() {
             ))}
           </div>
 
-          <button className="mt-4 w-full bg-green-500 text-white py-3 rounded-lg font-bold">
+          <button
+            onClick={goToVSL}
+            className="mt-4 w-full bg-green-500 text-white py-3 rounded-lg font-bold"
+          >
             VER TODAS AS MENSAGENS
           </button>
-        </div>
 
-        {/* LOCALIZAÇÃO */}
-
-        <div className="bg-white p-6 rounded-xl shadow text-center">
-          <p className="text-red-500 font-bold">2 Localizações Suspeitas</p>
-
-          <p className="text-sm mt-2">
-            encontradas nos últimos 14 dias perto de Moteis, Casas de Massagem e
-            Pontos de Prostituição
-          </p>
-        </div>
-
-        {/* CTA */}
-
-        <div className="bg-green-500 text-white p-6 rounded-xl text-center shadow">
-          <h3 className="text-lg font-bold mb-2">WhatsApp Desbloqueado!</h3>
-
-          <p className="text-sm mb-4">
-            Acesse as mensagens dela dentro do WhatsApp
+          <p className="my-6 text-sm">
+            <b className="text-red-500">2 Localizações Suspeitas</b> encontradas
+            nos últimos 14 dias perto de Moteis, Casas de Massagem e Pontos de
+            Prostituição
           </p>
 
-          <button className="bg-white text-green-600 font-bold px-6 py-3 rounded-lg">
-            Acessar WhatsApp
+          <button
+            onClick={goToVSL}
+            className="block w-full text-center bg-green-500 hover:bg-green-600 rounded-xl shadow-lg py-3 font-bold transition"
+          >
+            FINALIZE SEU CADASTRO
           </button>
         </div>
       </main>
 
       {/* FOOTER */}
-
-      <footer className="text-center text-xs text-gray-500 mt-8 space-y-3">
-        <div>
-          <p className="font-medium text-gray-600">Ferramenta Atualizada:</p>
-          <p>{date}</p>
-        </div>
-
-        <div className="text-gray-400">
-          © 2024 Espião Invisível. Todos os direitos reservados.
-        </div>
-
-        <div className="flex justify-center gap-4 text-emerald-600">
-          <a href="#">Termos de Uso</a>
-          <a href="#">Política de Privacidade</a>
+      <footer className="text-center text-xs text-gray-400 mt-8 space-y-3">
+        <p>Ferramenta Atualizada: Sexta-Feira, 13 de Março de 2026</p>
+        <p>© 2024 Espião Invisível. Todos os direitos reservados.</p>
+        <div className="flex justify-center gap-4">
+          <button onClick={goToVSL} className="hover:underline">
+            Termos de Uso
+          </button>
+          <button onClick={goToVSL} className="hover:underline">
+            Política de Privacidade
+          </button>
         </div>
       </footer>
 
@@ -215,7 +161,6 @@ export default function ReportPage2() {
           {...({ id: popup, close: () => setPopup(null), ddd } as any)}
         />
       )}
-
       <WhatsToast />
     </div>
   );

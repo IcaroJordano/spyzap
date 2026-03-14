@@ -38,8 +38,8 @@ export default function WhatsAppIntro({ onFinish }: WhatsAppIntroProps) {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-[#f0f0f0] flex items-center justify-center z-[9999]">
-      <div className="w-[375px] h-[812px] bg-[#f0f0f0] rounded-[40px] shadow-xl overflow-hidden flex flex-col items-center justify-center p-10">
+    <div className="fixed inset-0 bg-[#0f172a] bg- [#f0f0f0] flex items-center justify-center z-[9999]">
+      <div className="w-[375px] h-[812px] bg- bg-white/5 [#f0f0f0] rounded-[40px] shadow-xl overflow-hidden flex flex-col items-center justify-center p-10">
         {/* LOGO */}
         <div className="w-28 h-28 mb-16 animate-pulse">
           <svg viewBox="0 0 24 24" fill="#25D366">

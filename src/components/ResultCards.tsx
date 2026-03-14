@@ -1,6 +1,6 @@
 export default function ResultCards() {
   return (
-    <div className="bg-zinc-100 p-4 rounded-2xl mt-6 space-y-4">
+    <div className=" p-4 rounded-2xl mt-6 space-y-4">
       <div className="border p-3 rounded-xl flex gap-3">
         <img src="/assets/imgs/icon-msg.png" />
 

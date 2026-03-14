@@ -77,14 +77,17 @@ export default function Verificacao(): React.ReactElement {
             >
               <div className="w-[140px] h-[200px] rounded-lg overflow-hidden shadow-md mb-4">
                 <img
-                  src="/assets/imgs/homem-novo.png"
+                  src="https://detetiveonlinebr.com/spyzp/no-img/assets/imgs/homem-novo.png"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold underline min-w-[140px]">
+              <a
+                href="/no-img/marido"
+                className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold underline min-w-[140px]"
+              >
                 Parceiro
-              </button>
+              </a>
             </div>
 
             {/* Parceira */}
@@ -99,27 +102,19 @@ export default function Verificacao(): React.ReactElement {
             >
               <div className="w-[140px] h-[200px] rounded-lg overflow-hidden shadow-md mb-4">
                 <img
-                  src="/assets/imgs/mulher-nova.png"
+                  src="https://detetiveonlinebr.com/spyzp/no-img/assets/imgs/mulher-nova.png"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold underline min-w-[140px]">
+              <a
+                href="/no-img/esposa"
+                className="bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-lg font-semibold underline min-w-[140px]"
+              >
                 Parceira
-              </button>
+              </a>
             </div>
           </div>
-
-          {showContinue && (
-            <div className="mt-6 animate-[fadeInUp_0.5s_ease-out]">
-              <button
-                onClick={continuar}
-                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-bold uppercase tracking-wider shadow-lg"
-              >
-                CONTINUAR
-              </button>
-            </div>
-          )}
 
           <div className="mt-8 pt-5 border-t border-gray-200">
             <p className="text-sm text-gray-500">Ferramenta Atualizada:</p>

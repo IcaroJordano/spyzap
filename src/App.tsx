@@ -18,8 +18,11 @@ import WhatsAppPage from "./pages/WhatsAppPage";
 import BackRedirectPage from "./pages/backredirect/BackNumber";
 import BackResultsPage from "./pages/backredirect/BackResultados";
 import BackVSLPage from "./pages/backredirect/BackVsl";
-import ReportPage2 from "./components/ReportPageEsposa";
 import AnalysisPage from "./pages/AnalysisPage";
+import TesteNewPage from "./pages/TesteNewPage";
+import VersaoWhite from "./pages/VersaoWhite";
+import SpyZapLanding from "./pages/TesteNewPage";
+import ReportPage2 from "./components/ProgressBar2";
 
 // /* fluxo sem foto */
 // import VerificacaoNoImg from "./pages/noimg/Verificacao";
@@ -38,36 +41,17 @@ export default function App() {
   return (
     <Routes>
       {/* principal */}
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<TesteNewPage />} />
+      <Route path="/whatsapp" element={<WhatsAppPage />} />
 
-      {/* presell */}
-      <Route path="/pre/step-01" element={<Step01 />} />
-
-      <Route path="/pre/step-02" element={<Step02 />} />
-
-      <Route path="/pre/step-03" element={<Step03 />} />
-
-      <Route path="/pre/step-04" element={<Step04 />} />
-
-      {/* vsl */}
-      <Route path="/vsl" element={<VSL />} />
-
-      {/* whatsapp fake */}
-      <Route path="/whatsapp-web" element={<WhatsAppPage />} />
-
-      {/* fluxo sem foto */}
+      {/* Fluxo sem foto */}
+      <Route path="/no-img/vsl" element={<VSL />} />
       <Route path="/no-img/verificacao" element={<VerificacaoNoImg />} />
-      <Route path="/no-img/esposa" element={<ReportPage2 />} />
       <Route path="/no-img/marido" element={<ReportPage />} />
+      <Route path="/no-img/esposa" element={<ReportPage2 />} />
 
-      {/* <Route path="/no-img/marido" element={<MaridoNoImg />} /> */}
-      <Route path="/no-img/vsl" element={<AnalysisPage />} />
-      {/* <Route path="/no-img/whats-web" element={<WhatsWebNoImg />} /> */}
-
-      {/* backredirect */}
-      <Route path="/backredirect/number" element={<BackRedirectPage />} />
-      <Route path="/backredirect/resultados" element={<BackResultsPage />} />
-      <Route path="/backredirect/vsl" element={<BackVSLPage />} />
+      {/* Fluxo com foto */}
+      <Route path="/vsl" element={<VSL />} />
     </Routes>
   );
 }

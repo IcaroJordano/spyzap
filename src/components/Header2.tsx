@@ -1,6 +1,6 @@
 export default function Header2() {
   return (
-    <header className="flex items-center justify-center p-4 bg-white">
+    <header className="flex items-center justify-center p-4 ">
       <img
         src="https://detetiveonlinebr.com/spyzp/assets/imgs/whatsapp.png"
         className="h-[30px]"
