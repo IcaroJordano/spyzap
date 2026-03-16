@@ -22,7 +22,7 @@ export default function ScanModal({ phone }: Props) {
             if (allNine) {
               window.location.href = "/vsl";
             } else {
-              window.location.href = "no-img/verificacao";
+              window.location.href = "no-img/vsl";
             }
           }, 500);
 

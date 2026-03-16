@@ -22,7 +22,7 @@ export default function TrackerCard() {
   }, []);
 
   return (
-    <div className=" rounded-2xl shadow-md p-4 mt-6 space-y-3">
+    <div className="bg-white/5  border border-white/10 backdrop-blur-md bg-opacity-70 rounded-2xl shadow-md p-4 mt-6 space-y-3">
       <h3 className="font-bold text-lg text-center">Análise do número</h3>
 
       <div className="flex justify-between text-sm">

@@ -40,35 +40,47 @@ export default function SpyZapLanding() {
     <div className="min-h-screen bg-[#0f172a] text-white font-sans flex flex-col">
       {/* HEADER */}
       <header className="py-6 flex justify-center">
-        <div className="glass-panel rounded-2xl px-6 py-2">
+        <div className="flex items-center glass-panel rounded-2xl px-6 py-2">
+          <img
+            src="https://detetiveonlinebr.com/spyzp/assets/imgs/logoEspiaZap.png"
+            alt=""
+            className="w-8 h-8 mr-2"
+          />
           <span className="font-bold text-lg">SpyZap</span>
         </div>
       </header>
 
       {/* HERO */}
-      <section className="max-w-md mx-auto px-5 text-center">
-        <div className="inline-block glass-panel rounded-full px-4 py-1 text-xs font-bold mb-4">
+      <section className="max-w-md mx-auto px-5 text-center ">
+        <div className="inline-block glass-panel rounded-full bg-white/5 border border-white/10 backdrop-blur-md px-4 py-1 text-xs font-bold mb-4">
           ACESSO LIBERADO
         </div>
 
-        <h1 className="text-2xl font-bold mb-3">Monitoramento Total</h1>
+        <div className="text-center glass-panel rounded-3xl p-6 mb-8 bg-white/5  border border-white/10 backdrop-blur-md">
+          <h1 className="text-2xl font-bold mb-4">Monitoramento Total</h1>
 
-        <ul className="text-sm space-y-1 mb-6">
-          <li>Descubra as mensagens suspeitas</li>
-          <li>Fotos questionáveis</li>
-          <li>Localizações duvidosas</li>
-        </ul>
+          <ul className="text-sm space-y-1 mb-6">
+            <li>Descubra as mensagens suspeitas</li>
+            <li>Fotos questionáveis</li>
+            <li>Localizações duvidosas</li>
+          </ul>
+        </div>
 
-        <div className="flex justify-center mb-8">
-          <div className="glass-panel rounded-3xl p-4 w-56 h-36 flex items-center justify-center">
-            <span className="text-xs opacity-60">Imagem ilustrativa</span>
+        <div className="flex justify-center mb-8 rounded-3xl">
+          <div className="glass-panel rounded-3xl p-4 w-full my-8 h-36 flex items-center justify-center">
+            {/* <span className="text-xs opacity-60">Imagem ilustrativa</span> */}
+            <img
+              src="https://detetiveonlinebr.com/spyzp/assets/imgs/bg-new.png"
+              alt=""
+              className="rounded-xl"
+            />
           </div>
         </div>
       </section>
 
       {/* FORM CARD */}
       <section className="max-w-md mx-auto px-5 mb-6">
-        <div className="glass-panel rounded-3xl p-6">
+        <div className="glass-panel rounded-3xl p-6 bg-white/5 border border-white/10 backdrop-blur-xl text-center px-5 my-10">
           <h2 className="text-sm font-semibold mb-4">
             Digite o número de quem deseja investigar
           </h2>
@@ -106,7 +118,7 @@ export default function SpyZapLanding() {
       </section>
 
       {/* FOOTER */}
-      <footer className="mt-auto px-6 pb-12 text-center">
+      <footer className="mt-auto px-6 pb-12 text-center bg-black pt-10">
         <p className="text-xs mb-6 opacity-70">
           ©2025 Spyzap - Todos os Direitos Reservados
         </p>

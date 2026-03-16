@@ -39,7 +39,7 @@ export default function ReportPage2() {
 
   // Função que redireciona para a VSL
   const goToVSL = () => {
-    window.location.href = "/no-img/vsl";
+    window.location.href = "/whatsapp";
   };
 
   return (

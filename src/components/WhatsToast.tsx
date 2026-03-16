@@ -21,7 +21,7 @@ export default function WhatsToast() {
 
       <button
         className="bg-white text-green-600 mt-3 px-4 py-2 rounded-full font-bold"
-        onClick={() => (window.location.href = "/no-img/vsl")}
+        onClick={() => (window.location.href = "/whatsapp")}
       >
         Acessar WhatsApp
       </button>

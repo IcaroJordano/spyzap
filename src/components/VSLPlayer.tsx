@@ -19,7 +19,7 @@ export default function VSLPlayer() {
   }, []);
 
   return (
-    <div className="bg-black rounded-xl p-6 mt-4">
+    <div className=" rounded-xl p-6 mt-4">
       <h3 className="text-white text-xl font-bold">ASSISTA O VÍDEO ENQUANTO</h3>
 
       <p className="text-white mb-4">

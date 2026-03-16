@@ -33,7 +33,7 @@ export default function VSL() {
         clearInterval(interval);
         // Redireciona após completar
         if (isNoImgRoute) {
-          navigate("/whatsapp");
+          navigate("/no-img/verificacao");
         } else {
           navigate("/whatsapp");
         }
@@ -61,11 +61,11 @@ export default function VSL() {
           />
         </div>
 
-        <div className="bg-black bg-opacity-70 rounded-lg overflow-hidden mb-6">
+        <div className="bg-white/5  border border-white/10 backdrop-blur-md bg-opacity-70 rounded-lg overflow-hidden mb-6">
           <VSLPlayer />
         </div>
 
-        <div className="bg-black bg-opacity-70 rounded-3xl p-6 mb-6">
+        <div className="bg-white/5  border border-white/10 backdrop-blur-md bg-opacity-70 rounded-3xl p-6 mb-6">
           <div className="w-full bg-gray-800 rounded-full h-6 overflow-hidden border border-gray-600">
             <div
               className="h-6 bg-green-500 transition-all duration-100 ease-linear"
